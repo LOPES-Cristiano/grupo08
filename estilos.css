@@ -202,17 +202,19 @@ header {
 
 footer {
     position: fixed;
-    bottom: 0; /* Posiciona o rodapé na parte inferior da tela */
-    left: 0; /* Alinha o rodapé à esquerda da tela */
+    bottom: 0; 
+    left: 0; 
     width: 100%;
     background-color: #0045ad;
-    padding: 20px;
+    padding: 10px 20px; 
     color: white;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    height: 70px;
-    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra sutil no topo do rodapé */
+    height: 40px; 
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+    line-height: 1.4; 
 }
+
 
 @media (max-width: 450px) {
 
