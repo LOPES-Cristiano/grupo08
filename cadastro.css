@@ -60,7 +60,7 @@ header {
     max-width: 400px;
     margin-top: 50px;
     font-weight: 600;
-    position: relative; /* Adicionado para o botão Voltar ficar dentro do formulário */
+    position: relative; 
 }
 
 h2 {
@@ -95,9 +95,9 @@ textarea {
 
 .button-group {
     display: flex;
-    justify-content: center; /* Centraliza o botão Cadastrar */
+    justify-content: center;
     margin-top: 20px;
-    position: relative; /* Adicionado para permitir o posicionamento absoluto do botão Voltar */
+    position: relative; 
 }
 
 .botao-voltar {
@@ -108,7 +108,7 @@ textarea {
     border-radius: 4px;
     cursor: pointer;
     position: absolute;
-    right: 0; /* Posiciona o botão Voltar no canto direito */
+    right: 0; 
     top: 0;
 }
 
