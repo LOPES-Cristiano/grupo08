@@ -12,10 +12,10 @@ body {
 }
 
 header {
-    background-color: #0045ad;
+    background-color: rgb(53, 53, 53);
     padding: 20px;
     display: flex;
-    justify-content: space-between; /* Distribui os elementos com espaçamento entre eles */
+    justify-content: space-between; 
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
@@ -23,7 +23,7 @@ header {
 .logo {
     display: flex;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(187, 187, 187, 0.5);
     font-size: 24pt;
     margin-right: 20px;
 }
@@ -75,14 +75,14 @@ header {
 }
 
 .login-container button:hover {
-    background-color: rgba(0,69,173,255);
+    background-color: rgba(255, 255, 255, 0.2);
     color: white;
     border-color: white;
     animation: pulse-shadow 0.9s infinite;
 }
 
 .botao {
-    background-color: rgba(243,244,245,255);
+    background-color: white;
     color: rgb(54, 61, 105);
     font-weight: 600;
     border: 2px solid #000;
@@ -94,28 +94,24 @@ header {
 }
 
 .botao:hover {
-    background-color: rgba(0,69,173,255);
+    background-color: rgba(138, 138, 138, 0.2);
     color: white;
     border-color: white;
     animation: pulse-shadow 0.9s infinite;
 }
 @keyframes pulse-shadow {
     0%, 100% {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
     }
     50% {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
     }
 }
-
-
-
 .conteudo {
     display: flex;
     flex-direction: column;
 
 }
-
 .section-conteudo {
     display: flex;
     align-items: center;
@@ -126,26 +122,22 @@ header {
 
     flex-wrap: wrap;
 }
-
 .imagem-principal {
     width: 360px;
     height: auto;
 }
-
 .texto {
     display: flex;
     flex-direction: column;
     gap: 15px;
     font-weight: 500;
 }
-
 .carrossel {
     display: flex;
     overflow: hidden;
     width: 100%;
     height: 460px;
 }
-
 .carrossel section {
     min-width: 100%;
     transition: transform 0.5s ease-in-out;
@@ -153,26 +145,22 @@ header {
     justify-content: center;
     align-items: center;
 }
-
 .recursos {
     background-color: rgba(243,244,245,255);
 
     text-align: center;
 }
-
 .recursos h2 {
     font-size: 2em;
     margin-bottom: 20px;
     color: #333;
 }
-
 .recursos-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
 }
-
 .recursos-card {
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -181,19 +169,16 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-
 .recursos-card img {
     width: 60px;
     height: 60px;
     margin-bottom: 15px;
 }
-
 .recursos-card h3 {
     font-size: 1.5em;
     margin: 10px 0;
     color: #333;
 }
-
 .recursos-card p {
     font-size: 1em;
     color: #666;
@@ -205,11 +190,10 @@ footer {
     bottom: 0; 
     left: 0; 
     width: 100%;
-    background-color: #0045ad;
+    background-color: rgb(53, 53, 53);
     padding: 10px 20px; 
     color: white;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     height: 40px; 
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
     line-height: 1.4; 
