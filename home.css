@@ -15,7 +15,7 @@ body {
 
 header {
     background-color: rgb(53, 53, 53);
-    padding: 20px;
+    padding: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between; 
@@ -27,9 +27,8 @@ header {
 .logo {
     display: flex;
     left: 20px; 
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-size: 24pt;
+    height: 80px;
+    width: auto ;
 }
 
 .legenda-home {
@@ -109,7 +108,7 @@ footer {
 
 @media (max-width: 450px) {
 
-    .grupo08 {
+    .logo {
         display: none; 
     }
 

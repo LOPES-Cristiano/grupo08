@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRUPO 08</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" href="icone_pagina.png" sizes="32x32" type="image/png">
 </head>
 <body>
     <header>
         <div class="logo">
-            <h1 class="grupo08">GRUPO 08</h1>
+            <img src="logo.png" alt="logotipo">
         </div>
         <div class="botoes-container">
             <form class="login-container">
-                <input type="text" placeholder="Usuário" required>
+                <input type="text" placeholder="E-mail" required>
                 <input type="password" placeholder="Senha" class="senha" required>
                 <button type="submit">Entrar</button>
             </form>
@@ -22,9 +23,18 @@
                 <a href="cadastro.html" target="_self"><button class="botao">Cadastre-se</button></a>
             </div>      
         </div>
+
+        <div class="tema">
+            <div class="theme-switch">
+                <input type="checkbox" id="switch" class="switch-input">
+                <label for="switch" class="switch-label"></label>
+            </div>
+            <span class="legenda-tema">TROCAR TEMA</span>
+        </div>
+
     </header>
 
-    <main class="conteudo">
+<main class="conteudo">
         <div class="carrossel">
             <section id="backup">
                 <div class="section-conteudo">
@@ -76,11 +86,13 @@
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>DESENVOLVIDO PARA FINS ACADÊMICOS</p>
-    </footer>
-
+    
     <script src="carrossel.js"></script>
+    <script>
+        const themeSwitch = document.getElementById('switch');
+        themeSwitch.addEventListener('change', function() {
+            document.body.classList.toggle('dark-theme');
+        });
+    </script>
 </body>
 </html>

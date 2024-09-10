@@ -15,25 +15,27 @@ body {
 
 header {
     background-color: rgb(53, 53, 53);
-    padding: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
     display: flex;
-    justify-content: center; 
+    justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     position: relative;
+
 }
 
+
 .logo {
-    position: absolute;
+    display: flex;
     left: 20px; 
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-size: 24pt;
+    height: 80px;
+    width: auto ;
 }
 
 .legenda-cadastro {
     display: flex;
-    align-items: center;
     color: white;
     text-align: center;
     font-size: 15pt;
@@ -42,6 +44,41 @@ header {
 
 .legenda-cadastro span {
     margin-right: 15px;
+}
+
+.legenda {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.botao {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    border: 2px solid #000;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.582);
+}
+
+.botao:hover {
+    background-color: rgba(138, 138, 138, 0.2);
+    color: white;
+    border-color: white;
+    animation: pulse-shadow 0.9s infinite;
+}
+@keyframes pulse-shadow {
+    0%, 100% {
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
+    }
 }
 
 .conteudo {
@@ -144,7 +181,7 @@ footer {
 
 @media (max-width: 450px) {
 
-    .grupo08 {
+    .logo {
         display: none; 
     }
 
