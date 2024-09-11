@@ -16,8 +16,13 @@
             <form class="login-container">
                 <input type="text" placeholder="E-mail" required>
                 <input type="password" placeholder="Senha" class="senha" required>
-                <button type="submit">Entrar</button>
+                <button type="submit" id="entrar-btn">Entrar</button>
             </form>
+            <script>
+                document.getElementById('entrar-btn').addEventListener('click', function() {
+                    window.location.href = 'home.html';
+                });
+            </script>
             <div class="legenda">
                 <span>Acesse sua conta ou faça agora seu cadastro</span>
                 <a href="cadastro.html" target="_self"><button class="botao">Cadastre-se</button></a>
