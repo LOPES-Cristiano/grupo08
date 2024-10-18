@@ -126,13 +126,6 @@ O sistema utiliza um banco de dados MySQL para armazenar informações relaciona
 - `user_id`: Referência ao id do usuário que fez o upload (INT, FOREIGN KEY).
 - `link_token`: Token único gerado para compartilhamento do arquivo (VARCHAR(255), UNIQUE, NULL).
 
-#### 5.1.3. Tabela de Compartilhamentos (Shares)
-- `id`: Identificador único do compartilhamento (INT, AUTO_INCREMENT, PRIMARY KEY).
-- `arquivo_id`: Referência ao id do arquivo compartilhado (INT, FOREIGN KEY).
-- `usuario_id`: Referência ao id do usuário que compartilhou o arquivo (INT, FOREIGN KEY).
-- `link`: Link único gerado para o compartilhamento do arquivo (VARCHAR(255), UNIQUE).
-- `data_compartilhamento`: Data e hora do compartilhamento (DATETIME, DEFAULT CURRENT_TIMESTAMP).
-
 ### 5.2. Funcionalidades de Conta
 - **Cadastro de Usuários**: A rota `/cadastro` permite que novos usuários se registrem no sistema.
 - **Login de Usuários**: A rota `/login` permite a autenticação de usuários existentes.
