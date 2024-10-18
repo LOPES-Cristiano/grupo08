@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>G8 DRIVE</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos_home.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/theme-switch.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='images/icone_pagina.png') }}" sizes="32x32" type="image/png">
+        <meta property="og:title" content="G8 DRIVE - Sua Plataforma de Arquivos">
+        <meta property="og:description" content="Compartilhe e armazene seus arquivos com segurança e facilidade.">
+        <meta property="og:image" content="https://github.com/LOPES-Cristiano/grupo08/blob/main/previa.png">
+        <meta property="og:url" content="https://lopes-cristiano.github.io/grupo08/">
+        <meta property="og:type" content="website">
+        <style>
+        
+            .loader {
+                width: 48px;
+                height: 48px;
+                border: 3px dotted #000000;
+                border-style: solid solid dotted dotted;
+                border-radius: 50%;
+                display: inline-block;
+                position: relative;
+                box-sizing: border-box;
+                animation: rotation 2s linear infinite;
+            }
+            .dark-theme .loader {
+                width: 48px;
+                height: 48px;
+                border: 3px dotted #ffffff;
+                border-style: solid solid dotted dotted;
+                border-radius: 50%;
+                display: inline-block;
+                position: relative;
+                box-sizing: border-box;
+                animation: rotation 2s linear infinite;
+            }
+            .loader::after {
+                content: "";
+                box-sizing: border-box;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                border: 3px dotted #ff3d00;
+                border-style: solid solid dotted;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                animation: rotationBack 1s linear infinite;
+                transform-origin: center center;
+            }
+    
+            @keyframes rotation {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+    
+            @keyframes rotationBack {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(-360deg);
+                }
+            }
+    
+           
+            #loading-spinner {
+                position: fixed;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(255, 255, 255, 0.6);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(2px);
+                -webkit-backdrop-filter: blur(2px);
+                z-index: 9999;
+                visibility: hidden; 
+            }
+            .dark-theme #loading-spinner {
+                position: fixed;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(0, 0, 0, 0.6);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(2px);
+                -webkit-backdrop-filter: blur(2px);
+                z-index: 9999;
+                visibility: hidden; 
+            }
+        </style>
+    </head>
+<body>
+    <div id="loading-spinner">
+        <span class="loader"></span>
+    </div>
+    <header>
+        <div class="menu-toggle" id="menu-toggle">
+            <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path class="menu-icon-path" d="M3 6H21V8H3V6ZM3 11H21V13H3V11ZM3 16H21V18H3V16Z"/>
+            </svg>
+        </div>
+        
+        <div class="botoes-header">
+            <nav class="menu-topo">
+                <div class="logo">
+                    <div class="logo-back">
+                        <h1>G8 DRIVE</h1>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="perfil" id="perfil-link" title="Acessar Perfil">
+            <img src="{{ url_for('static', filename='images/icone_perfilpadrao.png') }}" alt="Foto de perfil">
+            <p>{{ username }}</p>
+        </div>
+    </header>
+ 
+    <div class="container">
+        <nav class="menu-esquerda" id="menu-esquerda">
+            <ul id="menu-list">
+                <li data-page="inicio">ENVIAR ARQUIVOS</li>
+                <li data-page="meus-arquivos">MEUS ARQUIVOS</li>
+                <li data-page="meu-perfil">MEU PERFIL</li>
+                <li><a id="logout-link" href="{{ url_for('logout') }}" class="logout-button">SAIR</a></li>
+            </ul>
+        </nav> 
+        <main class="conteudo" id="conteudo">
+           
+
+        </main>
+    </div>
+
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script>
+            let loadingTimeout;
+        let maxDurationTimeout;
+
+        
+        function showLoadingSpinner() {
+            document.getElementById('loading-spinner').style.visibility = 'visible';
+            
+            maxDurationTimeout = setTimeout(hideLoadingSpinner, 3000);
+        }
+
+        
+        function hideLoadingSpinner() {
+            clearTimeout(maxDurationTimeout); 
+            document.getElementById('loading-spinner').style.visibility = 'hidden';
+        }
+
+        
+        window.addEventListener("beforeunload", function() {
+            loadingTimeout = setTimeout(showLoadingSpinner, 50); 
+        });
+
+        
+        window.addEventListener("load", function() {
+            clearTimeout(loadingTimeout);
+            hideLoadingSpinner();
+        });
+    </script>
+    <script src="{{ url_for('static', filename='js/script_menu.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/fileUpload.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/script_home_inicio.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/script_home_perfil.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/script_home_arquivos.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/script_toggle_theme.js') }}" defer></script>
+</body>
+</html>
